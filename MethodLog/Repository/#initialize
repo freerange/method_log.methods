@@ -1,0 +1,4 @@
+    def initialize(path:)
+      @commits = []
+      @repository = Rugged::Repository.init_at(path, :bare)
+    end

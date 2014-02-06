@@ -1,0 +1,3 @@
+    def ==(other)
+      sha == other.sha
+    end

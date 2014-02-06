@@ -1,0 +1,8 @@
+    def on_kw(name)
+      case name
+      when 'def'
+        @line_number = lineno
+      when 'class'
+        @at_scope_start = true
+      end
+    end

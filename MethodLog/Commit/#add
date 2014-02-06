@@ -1,0 +1,3 @@
+    def add(source_file)
+      @source_files << source_file
+    end

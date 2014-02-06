@@ -1,0 +1,3 @@
+    def hash
+      [commit, method_definition].hash
+    end

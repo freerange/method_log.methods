@@ -1,0 +1,3 @@
+    def ==(other)
+      (path == other.path) && (lines == other.lines)
+    end

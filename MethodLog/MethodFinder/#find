@@ -1,0 +1,3 @@
+    def find(method_identifier)
+      @methods[method_identifier]
+    end

@@ -1,0 +1,3 @@
+    def ==(other)
+      (commit == other.commit) && (method_definition == other.method_definition)
+    end

@@ -1,0 +1,4 @@
+    def initialize(sha: nil)
+      @sha = sha
+      @source_files = []
+    end

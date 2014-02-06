@@ -1,0 +1,4 @@
+    def initialize(path:, source:)
+      @path = path
+      @source = source
+    end

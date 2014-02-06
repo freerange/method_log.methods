@@ -1,0 +1,7 @@
+    def initialize(source_file:)
+      super(source_file.source)
+      @source_file = source_file
+      @methods = {}
+      @at_scope_start = false
+      parse
+    end

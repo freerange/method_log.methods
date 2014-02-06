@@ -1,0 +1,3 @@
+    def hash
+      [path, lines].hash
+    end

@@ -1,0 +1,4 @@
+    def initialize(commit:, method_definition:)
+      @commit = commit
+      @method_definition = method_definition
+    end
