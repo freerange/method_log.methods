@@ -1,4 +1,4 @@
     def add(commit)
-      commit.apply(@repository)
+      commit.apply
       @commits << commit
     end

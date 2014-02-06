@@ -1,0 +1,3 @@
+    def build_commit
+      Commit.new(repository: @repository)
+    end

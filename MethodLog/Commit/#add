@@ -1,3 +1,4 @@
     def add(source_file)
-      @source_files << source_file
+      oid = @repository.write(source_file.source, :blob)
+      @index.add(path: source_file.path, oid: oid, mode: 0100644)
     end

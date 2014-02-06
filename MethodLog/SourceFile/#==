@@ -1,0 +1,3 @@
+    def ==(other)
+      (path == other.path) && (source == other.source)
+    end

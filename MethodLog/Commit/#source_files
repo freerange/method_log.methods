@@ -1,0 +1,10 @@
+    def source_files
+      commit = @repository.lookup(sha)
+      source_files = []
+      commit.tree.walk_blobs do |root, blob_hash|
+        path = root.empty? ? blob_hash[:name] : File.join(root, blob_hash[:name])
+        source = @repository.lookup(blob_hash[:oid]).text
+        source_files << SourceFile.new(path: path, source: source)
+      end
+      source_files
+    end
