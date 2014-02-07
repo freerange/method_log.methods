@@ -1,6 +1,6 @@
     def on_const(name)
       if @at_scope_start
-        @klass = name
+        @namespaces << name
         @at_scope_start = false
       end
     end

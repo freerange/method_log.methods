@@ -1,0 +1,3 @@
+    def on_class(*args)
+      @namespaces.pop
+    end
