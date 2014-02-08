@@ -1,4 +1,4 @@
-    def initialize(path:, lines:)
-      @path = path
+    def initialize(source_file:, lines:)
+      @source_file = source_file
       @lines = lines
     end

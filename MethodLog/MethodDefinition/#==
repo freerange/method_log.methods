@@ -1,3 +1,3 @@
     def ==(other)
-      (path == other.path) && (lines == other.lines)
+      (source_file == other.source_file) && (lines == other.lines)
     end
