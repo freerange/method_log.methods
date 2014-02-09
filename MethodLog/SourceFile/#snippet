@@ -1,0 +1,3 @@
+    def snippet(range)
+      lines = source.split($/)[range].join($/)
+    end
