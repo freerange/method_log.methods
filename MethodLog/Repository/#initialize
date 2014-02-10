@@ -1,4 +1,4 @@
-    def initialize(path:)
+    def initialize(path: nil)
       @repository = Rugged::Repository.new(path)
       @commits = []
       if @repository.ref('refs/heads/master')

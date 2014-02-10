@@ -1,4 +1,4 @@
-    def initialize(repository: nil, sha:)
+    def initialize(repository: nil, sha: nil)
       @repository = repository
       @sha = sha
       @index = Rugged::Index.new
