@@ -1,0 +1,17 @@
+    def on_sclass(node)
+      target_node = node.children.first
+      case target_node.type
+      when :self
+        namespaces = @namespaces.last
+      when :const
+        namespaces = process_const(target_node)
+      else
+        raise
+      end
+      original_namespaces = @namespaces
+      @namespaces = namespaces
+      @singleton_scope = true
+      super
+      @singleton_scope = false
+      @namespaces = original_namespaces
+    end
