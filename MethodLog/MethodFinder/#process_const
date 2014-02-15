@@ -1,0 +1,8 @@
+    def process_const(node, namespaces = [])
+      scope_node, name = *node
+      namespaces.unshift(name)
+      if scope_node
+        process_const(scope_node, namespaces)
+      end
+      namespaces
+    end

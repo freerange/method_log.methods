@@ -1,7 +1,6 @@
     def on_class(node)
       const_node = node.children.first
-      scope_node, name = *const_node
-      @namespaces.push(name)
+      @namespaces.push(process_const(const_node))
       super
       @namespaces.pop
     end
