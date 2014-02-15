@@ -1,3 +1,6 @@
-    def on_module(*args)
+    def on_module(node)
+      scope_node, name = *node.children.first
+      @namespaces.push(name)
+      super
       @namespaces.pop
     end

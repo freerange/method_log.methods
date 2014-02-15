@@ -1,8 +1,7 @@
     def initialize(source_file: nil)
-      super(source_file.source)
       @source_file = source_file
       @namespaces = []
       @methods = {}
-      @at_scope_start = false
-      parse
+      ast = Parser::CurrentRuby.parse(source_file.source)
+      process(ast)
     end

@@ -1,3 +1,7 @@
-    def on_class(*args)
+    def on_class(node)
+      const_node = node.children.first
+      scope_node, name = *const_node
+      @namespaces.push(name)
+      super
       @namespaces.pop
     end

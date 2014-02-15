@@ -1,6 +1,0 @@
-    def on_const(name)
-      if @at_scope_start
-        @namespaces << name
-        @at_scope_start = false
-      end
-    end
