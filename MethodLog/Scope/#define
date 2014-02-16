@@ -1,0 +1,3 @@
+    def define(name)
+      @modules[name] = self.class.new(name: name, parent: self)
+    end

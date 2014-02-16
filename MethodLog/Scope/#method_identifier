@@ -1,0 +1,3 @@
+    def method_identifier(name)
+      [names.join('::'), separator, name].join
+    end

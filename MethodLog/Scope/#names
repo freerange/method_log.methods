@@ -1,0 +1,4 @@
+    def names
+      names = @singleton ? [] : [@name]
+      @parent && @parent.parent ? @parent.names + names : names
+    end

@@ -1,0 +1,6 @@
+    def initialize(name: nil, parent: nil, singleton: false)
+      @name = name
+      @parent = parent
+      @singleton = singleton
+      @modules = {}
+    end

@@ -1,0 +1,3 @@
+    def singleton
+      self.class.new(name: @name, parent: self, singleton: true)
+    end

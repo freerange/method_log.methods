@@ -1,6 +1,12 @@
     def on_module(node)
       const_node = node.children.first
-      @namespaces.push(process_const(const_node))
+      constants = process_const(const_node)
+      new_constant = constants.pop
+      scope = @scope
+      constants.each do |c|
+        scope = scope.lookup(c)
+      end
+      @scope = scope.define(new_constant)
       super
-      @namespaces.pop
+      @scope = @scope.parent
     end

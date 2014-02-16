@@ -2,16 +2,17 @@
       target_node = node.children.first
       case target_node.type
       when :self
-        namespaces = @namespaces.last
+        @scope = @scope.singleton
       when :const
-        namespaces = process_const(target_node)
+        constants = process_const(target_node)
+        scope = @scope
+        constants.each do |c|
+          scope = scope.lookup(c)
+        end
+        @scope = scope.singleton
       else
         raise
       end
-      original_namespaces = @namespaces
-      @namespaces = namespaces
-      @singleton_scope = true
       super
-      @singleton_scope = false
-      @namespaces = original_namespaces
+      @scope = @scope.parent
     end

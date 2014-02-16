@@ -2,9 +2,14 @@
       definee_node, name, args_node, body_node = *node
       case definee_node.type
       when :self
-        namespaces = @namespaces.last
+        scope = @scope.singleton
       when :const
-        namespaces = process_const(definee_node)
+        constants = process_const(definee_node)
+        scope = @scope
+        constants.each do |c|
+          scope = scope.lookup(c)
+        end
+        scope = scope.singleton
       else
         raise
       end
@@ -13,7 +18,7 @@
       last_line = expression.source_buffer.decompose_position(expression.end_pos).first - 1
       lines = first_line..last_line
       definition = MethodDefinition.new(source_file: @source_file, lines: lines)
-      identifier = "#{namespaces.flatten.join('::')}.#{name}"
+      identifier = scope.method_identifier(name)
       @methods[identifier] = definition
       super
     end

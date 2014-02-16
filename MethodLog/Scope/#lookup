@@ -1,0 +1,9 @@
+    def lookup(name)
+      @modules.fetch(name) do
+        if @parent
+          @parent.lookup(name)
+        else
+          raise NameError.new("uninitialized constant #{name}")
+        end
+      end
+    end
