@@ -1,0 +1,11 @@
+    def singleton_scope_for(node)
+      case node.type
+      when :self
+        @scope.singleton
+      when :const
+        constants = process_const(node)
+        @scope.for(constants).singleton
+      else
+        raise
+      end
+    end

@@ -1,14 +1,6 @@
     def on_sclass(node)
       target_node = node.children.first
-      case target_node.type
-      when :self
-        @scope = @scope.singleton
-      when :const
-        constants = process_const(target_node)
-        @scope = @scope.for(constants).singleton
-      else
-        raise
-      end
+      @scope = singleton_scope_for(target_node)
       super
       @scope = @scope.parent
     end
