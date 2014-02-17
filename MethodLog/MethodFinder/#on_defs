@@ -5,11 +5,7 @@
         scope = @scope.singleton
       when :const
         constants = process_const(definee_node)
-        scope = @scope
-        constants.each do |c|
-          scope = scope.lookup(c)
-        end
-        scope = scope.singleton
+        scope = @scope.for(constants).singleton
       else
         raise
       end
