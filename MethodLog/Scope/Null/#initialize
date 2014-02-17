@@ -1,0 +1,3 @@
+      def initialize
+        super(name: 'null')
+      end

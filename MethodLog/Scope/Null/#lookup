@@ -1,0 +1,3 @@
+      def lookup(name)
+        raise NameError.new("uninitialized constant #{name}")
+      end
