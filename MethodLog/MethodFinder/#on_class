@@ -2,7 +2,5 @@
       const_node = node.children.first
       constants = process_const(const_node)
       new_constant = constants.pop
-      @scope = @scope.for(constants).define(new_constant)
-      super
-      @scope = @scope.parent
+      with_scope(@scope.for(constants).define(new_constant)) { super }
     end

@@ -1,8 +1,6 @@
     def on_defs(node)
       definee_node, name, args_node, body_node = *node
       scope = singleton_scope_for(definee_node)
-      definition = MethodDefinition.new(source_file: @source_file, lines: lines_for(node))
-      identifier = scope.method_identifier(name)
-      @methods[identifier] = definition
+      record_method_definition(scope, name, node)
       super
     end

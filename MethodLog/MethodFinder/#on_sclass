@@ -1,6 +1,4 @@
     def on_sclass(node)
       target_node = node.children.first
-      @scope = singleton_scope_for(target_node)
-      super
-      @scope = @scope.parent
+      with_scope(singleton_scope_for(target_node)) { super }
     end

@@ -1,0 +1,6 @@
+    def with_scope(scope, &block)
+      @scope = scope
+      yield
+    ensure
+      @scope = scope.parent
+    end
