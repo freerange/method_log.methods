@@ -1,6 +1,0 @@
-    def on_class(node)
-      const_node = node.children.first
-      constants = process_const(const_node)
-      new_constant = constants.pop
-      with_scope(@scope.for(constants).define(new_constant)) { super }
-    end
