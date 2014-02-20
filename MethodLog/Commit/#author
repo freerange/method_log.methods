@@ -1,0 +1,3 @@
+    def author
+      commit.author
+    end

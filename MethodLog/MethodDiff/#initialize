@@ -1,0 +1,3 @@
+    def initialize(commit: nil, parent: nil)
+      @commit, @parent = commit, parent
+    end

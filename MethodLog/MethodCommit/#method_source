@@ -1,0 +1,3 @@
+    def method_source
+      method_definition && method_definition.source + $/
+    end

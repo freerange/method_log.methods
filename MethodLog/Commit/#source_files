@@ -1,5 +1,4 @@
     def source_files
-      commit = @repository.lookup(sha)
       source_files = []
       commit.tree.walk_blobs do |root, blob_hash|
         name = blob_hash[:name]

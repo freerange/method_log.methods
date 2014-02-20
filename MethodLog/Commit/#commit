@@ -1,0 +1,3 @@
+    def commit
+      @commit ||= @repository.lookup(sha)
+    end

@@ -1,0 +1,3 @@
+    def empty?
+      to_s.chomp.empty?
+    end

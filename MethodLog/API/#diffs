@@ -1,0 +1,10 @@
+    def diffs(method_identifier)
+      Enumerator.new do |yielder|
+        history(method_identifier).each_cons(2) do |(commit, parent)|
+          diff = MethodDiff.new(commit: commit, parent: parent)
+          unless diff.empty?
+            yielder << [commit, diff]
+          end
+        end
+      end
+    end
