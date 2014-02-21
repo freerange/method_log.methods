@@ -1,5 +1,7 @@
     def for(modules)
       scope = self
-      modules.each { |m| scope = scope.lookup(m) }
+      modules.each do |mod|
+        scope = scope.lookup(mod) || scope.define(mod)
+      end
       scope
     end
