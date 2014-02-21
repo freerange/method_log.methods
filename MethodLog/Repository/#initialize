@@ -1,9 +1,4 @@
     def initialize(path: nil)
       @repository = Rugged::Repository.new(path)
       @commits = []
-      if @repository.ref('refs/heads/master')
-        @repository.walk(@repository.last_commit) do |commit|
-          @commits << build_commit(sha: commit.oid)
-        end
-      end
     end

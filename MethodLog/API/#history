@@ -1,6 +1,6 @@
-    def history(method_identifier)
+    def history(method_identifier, max_count: nil)
       Enumerator.new do |yielder|
-        @repository.commits.each do |commit|
+        @repository.commits(max_count: max_count).each do |commit|
           method_definitions = commit.source_files.inject([]) do |definitions, source_file|
             method_finder = MethodFinder.new(source_file: source_file)
             definitions += Array(method_finder.find(method_identifier))
