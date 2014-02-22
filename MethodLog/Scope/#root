@@ -1,0 +1,3 @@
+    def root
+      parent.root
+    end

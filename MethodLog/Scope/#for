@@ -1,5 +1,9 @@
     def for(modules)
       scope = self
+      if modules.first == :root
+        scope = root
+        modules.unshift
+      end
       modules.each do |mod|
         scope = scope.lookup(mod) || scope.define(mod)
       end
