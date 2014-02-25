@@ -1,4 +1,6 @@
-    def initialize(path: nil, source: nil)
+    def initialize(path: nil, source: nil, repository: nil, sha: nil)
       @path = path
       @source = source
+      @repository = repository
+      @sha = sha
     end
