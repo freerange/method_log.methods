@@ -1,0 +1,6 @@
+    def source_files_by_path
+      source_files.inject({}) do |hash, source_file|
+        hash[source_file.path] = source_file
+        hash
+      end
+    end

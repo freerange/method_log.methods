@@ -1,0 +1,3 @@
+    def contains?(source_file)
+      source_files_by_path[source_file.path] == source_file
+    end

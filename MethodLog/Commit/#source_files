@@ -1,5 +1,5 @@
     def source_files
-      Enumerator.new do |yielder|
+      @source_files ||= Enumerator.new do |yielder|
         commit.tree.walk_blobs do |root, blob_hash|
           name = blob_hash[:name]
           next unless File.extname(name) == '.rb'
