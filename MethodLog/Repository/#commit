@@ -1,0 +1,6 @@
+    def commit(*source_files)
+      build_commit.tap do |commit|
+        source_files.each { |sf| commit.add(sf) }
+        add(commit)
+      end
+    end
