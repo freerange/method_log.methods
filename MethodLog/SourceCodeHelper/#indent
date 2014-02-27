@@ -1,0 +1,4 @@
+    def indent(code, spaces = 2)
+      lines = code.split($/)
+      lines.map { |l| "#{' ' * spaces}#{l}"}.join($/)
+    end

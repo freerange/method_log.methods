@@ -1,0 +1,6 @@
+    def unindent(code)
+      lines = code.split($/)
+      indent = lines.reject { |l| l.strip.length == 0 }.map { |l| l[/^\s*/].length }.min
+      fixed_lines = lines.map { |l| l.sub(Regexp.new(' ' * indent), '') }
+      fixed_lines.drop_while { |l| l.strip.length == 0 }.take_while { |l| l.strip.length > 0 }.join($/)
+    end
