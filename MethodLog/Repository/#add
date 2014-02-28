@@ -1,4 +1,0 @@
-    def add(commit)
-      commit.apply
-      @commits << commit
-    end
