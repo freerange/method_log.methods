@@ -1,4 +1,4 @@
-    def initialize(name: nil, parent: nil, singleton: false)
+    def initialize(name, parent = nil, singleton = false)
       @name = name
       @parent = parent
       @singleton = singleton
