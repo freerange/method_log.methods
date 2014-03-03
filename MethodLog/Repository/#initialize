@@ -1,4 +1,4 @@
-    def initialize(path: nil)
+    def initialize(path)
       @repository = Rugged::Repository.new(path)
       @commits = []
     end
