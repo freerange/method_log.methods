@@ -1,6 +1,6 @@
-    def diffs(method_identifier, max_count: nil)
+    def diffs(method_identifier, options = {})
       Enumerator.new do |yielder|
-        history(method_identifier, max_count: max_count).each_cons(2) do |(commit, parent)|
+        history(method_identifier, options).each_cons(2) do |(commit, parent)|
           diff = MethodDiff.new(parent, commit)
           unless diff.empty?
             yielder << [commit, diff]
