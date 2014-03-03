@@ -1,4 +1,4 @@
-    def initialize(source_file: nil)
+    def initialize(source_file)
       @source_file = source_file
       @scope = Scope::Root.new
       @methods = {}
