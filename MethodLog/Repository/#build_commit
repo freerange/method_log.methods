@@ -1,3 +1,3 @@
-    def build_commit(sha: nil)
+    def build_commit(sha = nil)
       Commit.new(sha, @repository)
     end
